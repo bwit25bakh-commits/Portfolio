@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Aakash Bhusal — interactive JavaScript projects including Counter App and Password Generator.">
+    <title>Portfolio | Projects</title>
+    <script src="../js/script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top custom-navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="../index.html">AB</a>
+                <div class="header-controls d-flex align-items-center ms-auto">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+                        <i class="bi bi-moon-stars-fill theme-icon theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun-fill theme-icon theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path fill="currentColor" fill-rule="evenodd" d="M19.75 12a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75m0-5a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75m0 10a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/skills.html">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../html/projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section class="page-header">
+            <div class="container">
+                <p class="section-label">My projects</p>
+                <h1>Interactive JavaScript Projects</h1>
+                <p>Click any project card to see a live demo, description, and source code preview.</p>
+            </div>
+        </section>
+
+        <section class="projects-section section-padding">
+            <div class="container">
+                <!-- Project Cards Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1: Counter App -->
+                    <div>
+                        <article class="project-card" data-project="counter" tabindex="0">
+                            <div class="project-card-header">
+                                <h2 class="card-title">Counter App</h2>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <p class="card-text">A simple counter that demonstrates basic JavaScript state management with increment, decrement, and reset controls.</p>
+                            <button class="btn btn-sm btn-outline-primary project-trigger" aria-expanded="false" aria-controls="demo-counter">
+                                View Demo <i class="bi bi-chevron-down ms-2"></i>
+                            </button>
+                        </article>
+                    </div>
+
+                    <!-- Project 2: Password Generator -->
+                    <div>
+                        <article class="project-card" data-project="password" tabindex="0">
+                            <div class="project-card-header">
+                                <h2 class="card-title">Password Generator</h2>
+                                <span class="project-tag">JavaScript · Utility</span>
+                            </div>
+                            <p class="card-text">Generate secure random passwords with customizable length and character options with copy-to-clipboard.</p>
+                            <button class="btn btn-sm btn-outline-primary project-trigger" aria-expanded="false" aria-controls="demo-password">
+                                View Demo <i class="bi bi-chevron-down ms-2"></i>
+                            </button>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Active Demo Container -->
+                <div id="active-demo-container" role="region" aria-live="polite" aria-label="Project demo"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Aakash Bhusal. Portfolio Website.</p>
+        </div>
+    </footer>
+
+    <!-- Project Demo Templates -->
+    <template id="counter-template">
+        <div class="project-demo-panel" id="demo-counter">
+            <div class="demo-content">
+                <h3>Counter App Demo</h3>
+                <div class="counter-demo">
+                    <div class="counter-display">
+                        <span id="counterValue">0</span>
+                    </div>
+                    <div class="counter-controls">
+                        <button class="btn btn-sm btn-outline-primary" id="decreaseBtn">−</button>
+                        <button class="btn btn-sm btn-outline-primary" id="resetBtn">Reset</button>
+                        <button class="btn btn-sm btn-outline-primary" id="increaseBtn">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-description">
+                <h4>How it works</h4>
+                <p>A simple counter demonstrating basic JavaScript state management. Each button updates the displayed number with instant visual feedback.</p>
+            </div>
+
+            <div class="demo-technologies">
+                <h4>Technologies Used</h4>
+                <div class="tech-badges">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript ES6</span>
+                </div>
+            </div>
+
+            <div class="demo-code">
+                <h4>Source Code Preview</h4>
+                <pre><code>let count = 0;
+const display = document.getElementById('counterValue');
+
+increaseBtn.addEventListener('click', () => {
+  count++;
+  display.textContent = count;
+});
+
+resetBtn.addEventListener('click', () => {
+  count = 0;
+  display.textContent = count;
+});</code></pre>
+            </div>
+
+            <div class="demo-footer">
+                <button class="btn btn-sm btn-outline-secondary demo-close-btn">
+                    <i class="bi bi-x me-1"></i> Close Demo
+                </button>
+            </div>
+        </div>
+    </template>
+
+
+
+    <template id="password-template">
+        <div class="project-demo-panel" id="demo-password">
+            <div class="demo-content">
+                <h3>Password Generator Demo</h3>
+                <div class="password-demo">
+                    <div class="form-group">
+                        <label for="passwordLength">Password Length: <span id="lengthValue">16</span></label>
+                        <input type="range" id="passwordLength" class="form-range" min="8" max="32" value="16">
+                    </div>
+                    <div class="password-output">
+                        <input type="text" id="generatedPassword" class="form-control" readonly placeholder="Generated password">
+                        <button class="btn btn-sm btn-outline-primary" id="copyPasswordBtn" title="Copy to clipboard">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary w-100" id="generatePasswordBtn">Generate Password</button>
+                    <div class="password-copied" id="copiedMessage" style="display: none;">✓ Copied to clipboard!</div>
+                </div>
+            </div>
+
+            <div class="demo-description">
+                <h4>How it works</h4>
+                <p>Generates cryptographically-strong random passwords using uppercase, lowercase, numbers, and symbols. Includes a copy-to-clipboard feature for easy sharing.</p>
+            </div>
+
+            <div class="demo-technologies">
+                <h4>Technologies Used</h4>
+                <div class="tech-badges">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">Crypto API</span>
+                </div>
+            </div>
+
+            <div class="demo-code">
+                <h4>Source Code Preview</h4>
+                <pre><code>function generatePassword(length) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(
+      Math.floor(Math.random() * chars.length)
+    );
+  }
+  return password;
+}</code></pre>
+            </div>
+
+            <div class="demo-footer">
+                <button class="btn btn-sm btn-outline-secondary demo-close-btn">
+                    <i class="bi bi-x me-1"></i> Close Demo
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/projects.js" defer></script>
+</body>
+</html>
