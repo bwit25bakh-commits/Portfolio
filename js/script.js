@@ -190,10 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el, { attributes: true });
     });
 
-    if (navCollapseEl && window.bootstrap) {
-        const collapseInstance = window.bootstrap.Collapse.getOrCreateInstance(navCollapseEl, { toggle: false });
-        navCollapseEl.querySelectorAll(".nav-link").forEach((link) => {
-            link.addEventListener("click", () => {
+        const navCollapseEl = document.querySelector('#mainNavbar');
+
                 if (navCollapseEl.classList.contains("show")) {
                     collapseInstance.hide();
                 }
